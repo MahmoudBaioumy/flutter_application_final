@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556108215366",
+    "project_id": "flux-4aca0",
+    "storage_bucket": "flux-4aca0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556108215366:android:1150bc1a11bfb549b9c647",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgF7UsIKTUQV64AFMiaOpbToAo80EdRzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
