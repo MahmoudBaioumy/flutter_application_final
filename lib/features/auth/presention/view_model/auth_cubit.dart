@@ -29,12 +29,15 @@ class AuthCubit extends Cubit<AuthStates> {
         email: email,
         password: password,
       )
-          .then((value) {
+          .then((value) async {
         adduser(name, '', email, '', '', '');
+        await value.user?.updateDisplayName(name);
         emit(RegisterSuccesState());
       });
-      User user = credential.user!;
-      await user.updateDisplayName(name);
+      // User user = credential.user!;
+      // await user
+      //     .updateDisplayName(name)
+      //     .then((value) => print('Update ${user.displayName}'));
 
       //firestore
       // FirebaseFirestore.instance.collection('User').doc(user.uid).set({

@@ -15,14 +15,14 @@ class UserDetails extends StatefulWidget {
 class _UserDetailsState extends State<UserDetails> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   User? user;
-
+  String? userId;
   Future<void> _getUser() async {
     user = _auth.currentUser;
   }
 
-  List labelName = ["الاسم", "رقم الهاتف", "المدينة", "نبذه تعريفية", "العمر"];
+  List labelName = ["name", "phone", "city", "email", "age"];
 
-  List value = ["name", "phone", "city", "bio", "age"];
+  List value = ["name", "phone", "city", "email", "age"];
 
   @override
   void initState() {
@@ -40,7 +40,7 @@ class _UserDetailsState extends State<UserDetails> {
             splashRadius: 25,
             icon: Icon(
               Icons.arrow_back_ios,
-              color: AppColors.whitecolor,
+              color: AppColors.blackcolor,
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -53,7 +53,7 @@ class _UserDetailsState extends State<UserDetails> {
         child: StreamBuilder(
           stream: FirebaseFirestore.instance
               .collection('user')
-              .doc(user!.uid)
+              .doc(userId)
               .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -169,7 +169,7 @@ class _UserDetailsState extends State<UserDetails> {
   }
 
   Future<void> updateData(String key, value) async {
-    FirebaseFirestore.instance.collection('patient').doc(user!.uid).set({
+    FirebaseFirestore.instance.collection('user').doc(userId).set({
       key: value,
     }, SetOptions(merge: true));
     if (key == 'name') {

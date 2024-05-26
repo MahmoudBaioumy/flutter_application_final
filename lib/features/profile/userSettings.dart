@@ -41,15 +41,16 @@ class _UserSettingsState extends State<UserSettings> {
             splashRadius: 25,
             icon: Icon(
               Icons.arrow_back_ios,
-              color: AppColors.whitecolor,
+              color: AppColors.blackcolor,
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),
         title: Text(
-          'الاعدادات',
-          style: GetTitleStyle(color: AppColors.whitecolor),
+          'Setting',
+          style: GetTitleStyle(color: AppColors.blackcolor),
         ),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -57,7 +58,7 @@ class _UserSettingsState extends State<UserSettings> {
           children: [
             SettingsListItem(
               icon: Icons.person,
-              text: 'إعدادات الحساب',
+              text: 'profile Setting',
               onTap: () {
                 Navigator.push(
                     context,
@@ -67,27 +68,27 @@ class _UserSettingsState extends State<UserSettings> {
             ),
             SettingsListItem(
               icon: Icons.security_rounded,
-              text: 'كلمة السر',
+              text: ' password',
               onTap: () {},
             ),
             SettingsListItem(
               icon: Icons.notifications_active_rounded,
-              text: 'إعدادات الاشعارات',
+              text: ' Notifications',
               onTap: () {},
             ),
             SettingsListItem(
               icon: Icons.privacy_tip_rounded,
-              text: 'الخصوصية',
+              text: 'Privacy',
               onTap: () {},
             ),
             SettingsListItem(
               icon: Icons.question_mark_rounded,
-              text: 'المساعدة والدعم',
+              text: ' Help and support',
               onTap: () {},
             ),
             SettingsListItem(
               icon: Icons.person_add_alt_1_rounded,
-              text: 'دعوة صديق',
+              text: ' invite friend',
               onTap: () {},
             ),
             const Spacer(),
@@ -110,7 +111,7 @@ class _UserSettingsState extends State<UserSettings> {
                   _signOut();
                 },
                 child: Text(
-                  'تسجل خروج',
+                  'Log Out',
                   style:
                       GetTitleStyle(color: AppColors.whitecolor, fontSize: 14),
                 ),
